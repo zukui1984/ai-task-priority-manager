@@ -36,3 +36,23 @@ Frontend (React) → OpenAPI contract → Backend (FastAPI + SQLAlchemy + Postgr
 ## Local Setup
 1. `docker compose up`
 2. Visit http://localhost
+
+## Create AGENTS.md for AI Tools Documentation:
+
+#### AI-Assisted Development
+
+#### Tools Used
+- **GitHub Copilot**: Generated 90% of code (FastAPI routes, React components, tests)
+- **Prompts used**:
+  - "Create FastAPI CRUD endpoints for Task model with title:str, desc:str, priority:enum(Low/Medium/High), completed:bool"
+  - "React component to list tasks from /tasks API with priority colors"
+  - "Pytest tests for FastAPI task endpoints"
+
+## MCP Workflow
+Used Cursor IDE with Copilot for agent-like code generation following OpenAPI spec.
+
+### OpenAPI Specification
+Create openapi.yaml using Copilot/ChatGPT. 
+```
+Prompt: "Create OpenAPI 3.1 spec for task manager with CRUD operations: POST /tasks, GET /tasks, PUT /tasks/{id}, DELETE /tasks/{id}. Task schema: id(int), title(str), description(str), priority(enum: 'low','medium','high'), completed(bool). Include responses 200/404."
+```
