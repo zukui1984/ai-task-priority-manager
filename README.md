@@ -30,3 +30,21 @@ project-root/
 ├── openapi.yaml        # API Contract
 └── AGENTS.md           # AI Tools Documentation
 ```
+## Steps of projects:
+
+### Step 1: Set up the Project folder
+1. Create a folder on your Desktop named ai-task-manager.
+2. Open VS Code.
+3. Go to File > Open Folder and select ai-task-manager.
+4. Create two empty folders inside it:
+-     backend
+-     frontend
+5. Create one empty file in the main folder (root):
+-     docker-compose.yml
+
+```Prompt:
+"Write a docker-compose.yml file for a PostgreSQL database. Service name 'db', user 'user', password 'password', database 'tasksdb'. Map port 5432 to 5432. Use a named volume for persistence."
+```
+
+
+
