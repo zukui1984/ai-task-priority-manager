@@ -134,3 +134,7 @@ components:
           type: string
           enum: [low, medium, high]
 ```
+
+*** App view
+<img width="1900" height="622" alt="image" src="https://github.com/user-attachments/assets/fabb799e-fb5a-463c-bf30-13c20af1cf75" />
+
