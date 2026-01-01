@@ -1,50 +1,76 @@
 # 📝 Task Priority Manager
 
 ## 📖 Problem Description
-Staying organized is difficult. This application solves that by providing a clean, prioritized task list. Users can add tasks, assign them a priority level (**High**, **Medium**, **Low**), and track their completion status. This helps users focus on what matters most.
+In a fast-paced environment, keeping track of daily tasks can be overwhelming. This **Task Priority Manager** solves this problem by providing a simple, visual interface to organize tasks. Users can create tasks, assign them a priority (**High**, **Medium**, **Low**), and track their completion status. The application ensures that critical tasks (Red/High) stand out, helping users focus on what matters most.
 
 ## 🚀 Features
-- **Create Tasks:** Add title, description, and priority.
-- **Visual Priorities:** Tasks are color-coded (Red for High, Yellow for Medium).
-- **Status Tracking:** Mark tasks as completed or pending.
-- **Full Stack:** Built with modern technologies.
+- **Task Management:** Create, Read, Update, and Delete (CRUD) tasks.
+- **Priority System:** Visual color coding (Red=High, Yellow=Medium, Green=Low).
+- **Status Tracking:** Toggle tasks between "Pending" and "Completed".
+- **Responsive UI:** Clean interface built with React.
+- **Persistent Storage:** All data is saved in a PostgreSQL database.
 
-## 🛠️ Technologies
-- **Frontend:** React + TypeScript (Bootstrapped with CRA)
-- **Backend:** FastAPI (Python)
-- **Database:** PostgreSQL
-- **Containerization:** Docker & Docker Compose
-- **API Spec:** OpenAPI 3.1
+## 🛠️ Tech Stack & Architecture
+- **Frontend:** React (TypeScript) + Axios
+- **Backend:** FastAPI (Python) + SQLAlchemy
+- **Database:** PostgreSQL 15
+- **Containerization:** Docker + Docker Compose
+- **API Specification:** OpenAPI 3.1
 
-## 📂 Project Structure
+### Project Structure
 ```text
 project-root/
 ├── backend/            # FastAPI Application
-│   ├── main.py         # App entry point & Routes
-│   ├── models.py       # Database models
+│   ├── main.py         # Routes & Database Logic
+│   ├── requirements.txt
 │   └── Dockerfile
 ├── frontend/           # React Application
-│   ├── src/            # Components & Logic
+│   ├── src/            # Components (App.tsx)
+│   ├── public/
+│   ├── package.json
 │   └── Dockerfile
-├── docker-compose.yml  # Orchestration for DB, Backend, Frontend
+├── docker-compose.yml  # Orchestration
 ├── openapi.yaml        # API Contract
-└── AGENTS.md           # AI Tools Documentation
-```
-## Steps of projects:
-
-### Step 1: Set up the Project folder
-1. Create a folder on your Desktop named ai-task-manager.
-2. Open VS Code.
-3. Go to File > Open Folder and select ai-task-manager.
-4. Create two empty folders inside it:
--     backend
--     frontend
-5. Create one empty file in the main folder (root):
--     docker-compose.yml
-
-```Prompt:
-"Write a docker-compose.yml file for a PostgreSQL database. Service name 'db', user 'user', password 'password', database 'tasksdb'. Map port 5432 to 5432. Use a named volume for persistence."
+├── AGENTS.md           # AI Workflow Documentation
+└── README.md           # Project Documentation
 ```
 
+### 🏃‍♂️ How to Run the Project
+#### Prerequisites
+- Docker & Docker Compose installed.
+
+#### Steps:
+
+1. Clone the repository:
+```
+git clone https://github.com/zukui1984/ai-task-priority-manager.git
+cd project-root
+```
+
+2. Start the Application:
+- Run the following command in the root folder:
+```
+docker-compose up --build
+```
+
+3. Access the App:
+- Frontend (UI): http://localhost:3000
+- Backend API Docs: http://localhost:8000/docs
+
+### 🧪 Testing
+The backend includes connection tests to ensure the database is reachable.
+To run tests manually inside the container:
+```
+docker-compose exec backend pytest
+```
 
 
+***
+
+### **Step 2: The AGENTS.md** - Put this code
+*Create this file in your root folder `project-root/AGENTS.md`.*
+
+
+
+## 🚀 Conclusion
+Using AI tools significantly speeded up the boilerplate coding (CRUD operations, Dockerfiles) allowing me to focus on architecture and debugging integration issues between containers.
